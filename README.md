@@ -9,4 +9,6 @@ The development process follows methodologies inspired by XOD and SABiO, emphasi
 
 ![Toward Obsessive-Compulsive Disorder Classification System](https://github.com/areejnasser/PhD-2024/assets/58149704/62e9b99e-599d-497e-b02e-1706919ac8c2)
 
-The Pattern Design used for enriching the ontology with WordNet and Contextual similarity derived from Embedding model are Lemon and FrAC models. 
+The Pattern Design used for enriching the ontology with WordNet and Contextual similarity derived from Embedding model are Lemon and FrAC models.
+
+![Ontology-Enrichment WordNet lemon-core](https://github.com/areejnasser/PhD-2024/assets/58149704/lemon-core.png)
