@@ -9,6 +9,11 @@ The development process follows methodologies inspired by XOD and SABiO, emphasi
 
 ![Toward Obsessive-Compulsive Disorder Classification System](https://github.com/areejnasser/PhD-2024/assets/58149704/62e9b99e-599d-497e-b02e-1706919ac8c2)
 
+We used 12 existing ontologies. Those are illustrated in the following figure. 
+
+![Re-using Ontologies](/Toward%20Obsessive-Compulsive%20Disorder%20Classification%20System/Ontology/OntoOCD-version/re-using-ontologies.png)
+
+
 To enrich the ontology, we employed Lemon and FrAC models, integrating WordNet and embeddings for contextual similarity.
 
 ![Ontology-Enrichment WordNet lemon-core](/Toward%20Obsessive-Compulsive%20Disorder%20Classification%20System/Ontology/Ontology-Enrichment/WordNet/lemon-core.png)
