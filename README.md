@@ -1,5 +1,5 @@
-# PhD-2024
-Toward Obsessive-Compulsive Disorder Classification System
+# PhD-2024-Toward Obsessive-Compulsive Disorder Classification System
+
 
 This repository is dedicated to the development of an Obsessive-Compulsive Disorder (OCD) Ontology and a BERT-based classification system. It aims to advance OCD research by providing structured knowledge representation and efficient classification methodologies. The structure is as follows: Ontology Folder: Contains two sub-folders.
 Ontology Version: Holds the .owl file for the OCD Ontology.
