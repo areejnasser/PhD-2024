@@ -21,7 +21,8 @@ To enrich the ontology, we employed Lemon and FrAC models, integrating WordNet a
 ![Ontology-Enrichment WordNet lemon-core](/Toward%20Obsessive-Compulsive%20Disorder%20Classification%20System/Ontology/Ontology-Enrichment/WordNet/lemon-core.png)
 
 
-![Ontology-Enrichment Contextual Similarity ontolex-frac](/Toward%20Obsessive-Compulsive%20Disorder%20Classification%20System/Ontology/Ontology-Enrichment/Contextual-similarity/ontolex-frac.png)
+<img src="/Toward%20Obsessive-Compulsive%20Disorder%20Classification%20System/Ontology/Ontology-Enrichment/Contextual-similarity/ontolex-frac.png" width="500">
+
 
 The SPARQL qury used for integrating those resources into OCD ontology is:
 
