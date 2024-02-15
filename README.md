@@ -1,7 +1,7 @@
 # PhD-2024
 Toward Obsessive-Compulsive Disorder Classification System
 
-This repository contains the OCD Ontology and a classification system based on BERT. The structure is as follows: Ontology Folder: Contains two sub-folders.
+This repository is dedicated to the development of an Obsessive-Compulsive Disorder (OCD) Ontology and a BERT-based classification system. It aims to advance OCD research by providing structured knowledge representation and efficient classification methodologies. The structure is as follows: Ontology Folder: Contains two sub-folders.
 Ontology Version: Holds the .owl file for the OCD Ontology.
 Enriched Ontology: Contains resources for enriching the OCD Ontology with WordNet, including the WordNet resources and a SPARQL query for integration. A second sub-folder within enriched ontology is dedicated to contextual similarity, featuring a Word2Vec model trained on OCD forum data and a CSV with top-10 terms similar to OCD concepts.
 
@@ -40,9 +40,6 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX spif: <http://spinrdf.org/spif#>
 PREFIX wn20schema: <http://www.w3.org/2006/03/wn/wn20/schema/>
 PREFIX wn20instances: <http://www.w3.org/2006/03/wn/wn20/instances/>
-
-# Your SPARQL query goes here
-
 #SELECT *
 #FROM <ocd>
 
@@ -92,7 +89,7 @@ INSERT
     a ontolex:LexicalSense ;
     a frac:Observable ;
     ontolex:isLexicalizedSenseOf ?wn20ss ;
-    ontolex:reference <http://www.w3.org/2006/03/wn/wn20/> . ## or the actual wordnet synset?
+    ontolex:reference <http://www.w3.org/2006/03/wn/wn20/> . 
 
 ?wn20ss
     a ontolex:LexicalConcept ;
