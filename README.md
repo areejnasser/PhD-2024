@@ -7,12 +7,13 @@ Enriched Ontology: Contains resources for enriching the OCD Ontology with WordNe
 
 The development process follows methodologies inspired by XOD and SABiO, emphasizing knowledge gathering, concept analysis, and logical consistency using Description Logic (DL). Reuse strategies involve integrating existing ontological components and enriching the ontology with design patterns from WordNet and contextual similarities. This approach ensures a comprehensive representation of OCD in both the ontology and the classification system.
 
-<img src="https://github.com/areejnasser/PhD-2024/assets/58149704/62e9b99e-599d-497e-b02e-1706919ac8c2" width="200" height="200">
+<img src="https://github.com/areejnasser/PhD-2024/assets/58149704/62e9b99e-599d-497e-b02e-1706919ac8c2" width="300" height="300">
 
 
 Our study incorporates 12 pre-existing ontologies, as demonstrated in the subsequent figure: 
 
-![Re-using Ontologies](/Toward%20Obsessive-Compulsive%20Disorder%20Classification%20System/Ontology/OntoOCD-version/re-using-ontologies.png)
+<img src="/Toward%20Obsessive-Compulsive%20Disorder%20Classification%20System/Ontology/OntoOCD-version/re-using-ontologies.png" width="500" height="auto">
+
 
 
 To enrich the ontology, we employed Lemon and FrAC models, integrating WordNet and embeddings for contextual similarity.
