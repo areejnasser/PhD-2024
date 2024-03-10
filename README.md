@@ -1,9 +1,11 @@
 # PhD-2024-Toward Obsessive-Compulsive Disorder Classification System
 
 
-This repository is dedicated to the development of an Obsessive-Compulsive Disorder (OCD) Ontology and a BERT-based classification system. It aims to advance OCD research by providing structured knowledge representation and efficient classification methodologies. The structure is as follows: Ontology Folder: Contains two sub-folders.
-Ontology Version: Holds the .owl file for the OCD Ontology.
-Enriched Ontology: Contains resources for enriching the OCD Ontology with WordNet, including the WordNet resources and a SPARQL query for integration. A second sub-folder within enriched ontology is dedicated to contextual similarity, featuring a Word2Vec model trained on OCD forum data and a CSV with top-10 terms similar to OCD concepts.
+This repository is dedicated to the development of an Obsessive-Compulsive Disorder (OCD) Ontology and a BERT-based classification system. It aims to advance OCD research by providing structured knowledge representation and efficient classification methodologies. 
+
+The structure of the repository is as follows: 
+Ontology Folder: Contains two sub-folders. OCD Ontology Version: Holds an .owl file for the OCD Ontology.
+OCD Enriched Ontology: Contains resources for enriching the OCD Ontology with WordNet, including the WordNet resources used for enrichment and a SPARQL query for integration. A second sub-folder within enriched ontology is dedicated to contextual similarity, featuring a Word2Vec model trained on OCD forum data and a CSV with top-10 terms similar to OCD concepts. 
 
 The development process follows methodologies inspired by XOD and SABiO, emphasizing knowledge gathering, concept analysis, and logical consistency using Description Logic (DL). Reuse strategies involve integrating existing ontological components and enriching the ontology with design patterns from WordNet and contextual similarities. This approach ensures a comprehensive representation of OCD in both the ontology and the classification system.
 
@@ -139,7 +141,6 @@ WHERE {
 
 	BIND(CONCAT(REPLACE(?xbas, '_', ' ')) AS ?quot)
 }) in read me file as code
-
 
 
 
