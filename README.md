@@ -1,13 +1,29 @@
 # PhD-2024-Toward Obsessive-Compulsive Disorder Classification System
 
 
-This repository is dedicated to the development of an Obsessive-Compulsive Disorder (OCD) Ontology and a BERT-based classification system. It aims to advance OCD research by providing structured knowledge representation and efficient classification methodologies. 
+This repository is dedicated to developing an Obsessive-Compulsive Disorder (OCD) Ontology and a BERT-based classification system. It aims to advance OCD research by providing structured knowledge representation and efficient classification methodologies. 
 
-The structure of the repository is as follows: 
-Ontology Folder:  Contains sub-folders. OCD Ontology Version: Holds an .owl file for the OCD Ontology.
-OCD Enriched Ontology: Contains resources for enriching the OCD Ontology with WordNet, including the WordNet resources used for enrichment and a SPARQL query for integration. A second sub-folder within enriched ontology is dedicated to contextual similarity, featuring a Word2Vec model trained on OCD forum data and a CSV with top-10 terms similar to OCD concepts. 
-Ontology folder provide the OCD competency Questions(CQs) used to developed the ontology and Natural Language Defination of OCD Concepts and Description Logic
-The development process follows methodologies inspired by XOD and SABiO, emphasizing knowledge gathering, concept analysis, and logical consistency using Description Logic (DL). Reuse strategies involve integrating existing ontological components and enriching the ontology with design patterns from WordNet and contextual similarities. This approach ensures a comprehensive representation of OCD in both the ontology and the classification system.
+The repository is organized into specific directories and subdirectories, each with a distinct purpose:
+
+Ontology Folder: This directory contains multiple subfolders:
+OCD Ontology Version: This subfolder stores the .owl file of the OCD Ontology.
+OCD Ontology-Enrichment: Inside, there are tools for augmenting the ontology, like WordNet resources for semantic enhancement and SPARQL queries for integration. Another subfolder contains elements related to contextual similarity, including a Word2Vec model trained on OCD forum data and a CSV file listing terms semantically close to OCD-related concepts.
+Competency Questions (CQs): The ontology folder also houses the CQs that were instrumental in shaping the ontology. The creation of the ontology was guided by methodologies from XOD and SABiO, which stress the importance of gathering comprehensive knowledge, analyzing concepts thoroughly, and ensuring logical coherence via Description Logic (DL). The process begins with collating CQs, which are then dissected into patterns. These patterns are elaborated during knowledge acquisition and later modeled during the conceptualization phase. Additionally, the ontology's concepts are clarified with Natural Language (NL) definitions which are translated into Description Logic (DL) formulations. Both CQs and NL definitions, along with DL expressions, are accessible within the ontology folder.
+Evaluation Folder: Contains SPARQL queries and a subfolder named 'Expert'. This 'Expert' subfolder includes a CSV file featuring posts annotated by the ontology and subsequently evaluated by domain experts for accuracy and relevance. 
+
+The repository's "Annotation" directory is a compilation of resources and scripts used for the data annotation process, with the following contents:
+
+Annotation 1 and Annotation 2 Subfolders: These contain the results of the annotation efforts.
+Annotation 1: Includes a collection of files detailing the annotations of an OCD forum using the base OCD ontology.
+The .col file holds the specific annotations.
+The .ttl file provides these annotations in RDF (Resource Description Framework) format.
+The .owl file contains the populated ontology with the new annotations integrated.
+Annotation 2: Similar to Annotation 1 but uses the enriched OCD ontology.
+The .txt file captures the annotations.
+The .ttl file represents these annotations in RDF format.
+The .owl file showcases the enriched ontology now populated with the annotations.
+NCBO-API.ipynb: This Python notebook contains the code utilized to interact with the NCBO API. It integrates the OCD ontology to annotate the dataset encapsulated in the "all-annotated-data.zip" file, demonstrating the practical application of the ontology for data annotation tasks.
+
 
 <img src="https://github.com/areejnasser/PhD-2024/assets/58149704/62e9b99e-599d-497e-b02e-1706919ac8c2" width="300" height="300">
 
