@@ -21,8 +21,8 @@ PREFIX ocd: <http://www.semanticweb.org/OCD#>
 \end{lstlisting}
 
 The subsequent sections detail SPARQL queries formulated to address the CQs outlined in Table \ref{tab:CQ-knowledge-pattern} in Chapter \ref{construction}. Accompanying each query, an explanation is provided to illustrate how each query aims to retrieve information pertinent to the posed questions, leveraging the structured knowledge within the OCD ontology. 
-(``` 
-CQ1. What causes OCD? )
+
+CQ1. What causes OCD? 
 
 \begin{lstlisting}[language=SPARQL]
 {
