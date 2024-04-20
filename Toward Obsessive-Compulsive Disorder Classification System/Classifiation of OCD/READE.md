@@ -1,3 +1,5 @@
+For demo how to use the obsession model downdload 'Use_BioBERT_model_obsession_expert_tested.ipynb' and run from Colab prefereblly (as it require cuda). 
+
 The repository 'Classification of OCD' contain four subrepository. The description of each folder is as follows
 ############# BERT########################################
 The BERT repo has two python scripts used to create Obsession and Compulsion model trained based on the BERT pre trained model.
