@@ -13,9 +13,6 @@ OCD Ontology-Enrichment: Inside, there are tools for augmenting the ontology, li
 
 
 
-Competency Questions (CQs): The ontology folder also houses the CQs that were instrumental in shaping the ontology. The creation of the ontology was guided by methodologies from XOD and SABiO, which stress the importance of gathering comprehensive knowledge, analyzing concepts thoroughly, and ensuring logical coherence via Description Logic (DL). The process begins with collating CQs, which are then dissected into patterns. These patterns are elaborated during knowledge acquisition and later modeled during the conceptualization phase. Additionally, the ontology's concepts are clarified with Natural Language (NL) definitions which are translated into Description Logic (DL) formulations. Both CQs and NL definitions, along with DL expressions, are accessible within the ontology folder.
-
-
 Evaluation Folder: Contains SPARQL queries, OOPs, survey of ontology evaluation, and subfolder for evaluation the ontology labelling by domain Experts. This 'Expert' subfolder includes a CSV file featuring posts annotated by the ontology and subsequently evaluated by domain experts for accuracy and relevance.  The survey folder consists of the survey, the results and visual analysis of the results. 
 
 The repository's "Annotation" directory is a compilation of resources and scripts used for the data annotation process, with the following contents:
