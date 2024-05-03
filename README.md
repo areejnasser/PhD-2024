@@ -32,9 +32,8 @@ NCBO-API.ipynb: This Python notebook contains the code utilized to interact with
 <img src="https://github.com/areejnasser/PhD-2024/assets/58149704/62e9b99e-599d-497e-b02e-1706919ac8c2" width="300" height="300">
 
 
-Our study incorporates 12 pre-existing ontologies, as demonstrated in the subsequent figure: 
+Our study incorporates 12 pre-existing ontologies.
 
-<img src="/Toward%20Obsessive-Compulsive%20Disorder%20Classification%20System/Ontology/OntoOCD-version/re-using-ontologies.png" width="500" height="auto">
 
 
 
