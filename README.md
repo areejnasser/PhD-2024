@@ -22,11 +22,38 @@ Annotation 1: Includes a collection of files detailing the annotations of an OCD
 The .col file holds the specific annotations.
 The .ttl file provides these annotations in RDF (Resource Description Framework) format.
 The .owl file contains the populated ontology with the new annotations integrated.
+
+To describe this task the prerequisites:
+Python environment with necessary libraries installed (e.g., pandas, requests, tqdm).
+Access to the Biportal API with a valid API_KEY.
+Dataset of OCD forum posts.
+
+Steps to Run the Python Script
+
+Dataset Preparation:
+
+Ensure the OCD forum posts dataset is available in the specified directory: ontology-based classification/PhD-2024/Toward Obsessive-Compulsive Disorder Classification System/OCD2(updated).json.
+If necessary, adjust the directory path to match the location of your dataset.
+API Key Configuration:
+
+Obtain an API_KEY to access the Biportal API.
+Update the Python script (NCBO-API.ipynb) with your API_KEY for accessing the Annotator Plus service.
+
+Open and run the Python script (NCBO-API.ipynb).
+The script processes the OCD forum posts and sends them to the Annotator Plus service for annotation.
+
+Processing Annotation Results:
+Convert the CSV file of the annotation results into .col and .ttl formats.
+The .col file format is used to store the raw annotations.
+The .ttl file format (Turtle) is used to represent the annotations where each post is typed as a class.
+
+Now, the posts are represented with their associated annotations as ttl. To integrate ttl into OCD ontology, we upload ttl and OCD ontology owl file into GraphDP. We run SPARQL query illustrated in (population_post_into_ocd_ontology). We run the reasoning and extract posts with obsession and compulsion inferences. 
+
 Annotation 2: Similar to Annotation 1 but uses the enriched OCD ontology.
 The .txt file captures the annotations.
 The .ttl file represents these annotations in RDF format.
 The .owl file showcases the enriched ontology now populated with the annotations.
-NCBO-API.ipynb: This Python notebook contains the code utilized to interact with the NCBO API. It integrates the OCD ontology to annotate the dataset encapsulated in the "all-annotated-data.zip" file, demonstrating the practical application of the ontology for data annotation tasks.
+
 
 
 <img src="https://github.com/areejnasser/PhD-2024/assets/58149704/62e9b99e-599d-497e-b02e-1706919ac8c2" width="300" height="300">
