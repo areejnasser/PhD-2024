@@ -23,7 +23,7 @@ The .col file holds the specific annotations.
 The .ttl file provides these annotations in RDF (Resource Description Framework) format.
 The .owl file contains the populated ontology with the new annotations integrated.
 
-To describe this task the prerequisites:
+To describe this task, the prerequisites:
 Python environment with necessary libraries installed (e.g., pandas, requests, tqdm).
 Access to the Biportal API with a valid API_KEY.
 Dataset of OCD forum posts.
