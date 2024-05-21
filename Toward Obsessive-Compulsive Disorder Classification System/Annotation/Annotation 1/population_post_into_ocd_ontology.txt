@@ -1,0 +1,67 @@
+1. ttl file is uploaded in GraphDP with OCD ontology +
+2. SPARQL query was run 
+
+Query 1. 
+
+PREFIX : http://www.semanticweb.org/OntoOCD#
+PREFIX owl: http://www.w3.org/2002/07/owl#
+PREFIX rdfs: http://www.w3.org/2000/01/rdf-schema#
+INSERT {
+?post rdfs:label ?plbl
+}
+WHERE {
+?post a owl:Thing , ?something .
+FILTER(STRSTARTS(STR(?post),CONCAT(STR(:),"post")))
+FILTER(STRSTARTS(STR(?something),STR(:)))
+BIND(REPLACE(LCASE(STRAFTER(STR(?something),STR(:))),
+"
+_
+"
+,
+" ") AS ?plbl)
+}
+
+The INSERT clause specifies the triples to be added to the RDF dataset.
+?post rdfs:label ?plbl means for each ?post found in the WHERE clause, add a rdfs:label property with the value of ?plbl.
+
+The WHERE clause defines the conditions to find the data to be inserted.
+Triple Pattern:
+?post a owl:Thing , ?something .
+This matches any resource ?post that is of type owl:Thing and is also related to another resource ?something.
+
+The first filter ensures that ?post starts with the string http://www.semanticweb.org/OntoOCD#post.
+The second filter ensures that ?something starts with the string http://www.semanticweb.org/OntoOCD#.
+
+STR(?something) converts ?something to a string.
+STRAFTER(STR(?something), STR(:)) gets the substring after the namespace http://www.semanticweb.org/OntoOCD#.
+LCASE(...) converts the result to lowercase.
+REPLACE(..., "_", " ") replaces underscores with spaces.
+The final result is bound to the variable ?plbl.
+
+
+
+Query 2.  This query assigns classes to resources based on their labels.
+
+PREFIX : http://www.semanticweb.org/OntoOCD#
+PREFIX owl: http://www.w3.org/2002/07/owl#
+PREFIX rdfs: http://www.w3.org/2000/01/rdf-schema#
+Populate the annotations 2
+INSERT {
+?post a ?y
+}
+WHERE {
+?post a owl:Thing ; rdfs:label ?plbl .
+FILTER(STRSTARTS(STR(?post),CONCAT(STR(:),"post")))
+BIND(LCASE(STR(?plbl)) AS ?plblnolang)
+?y a owl:Class ; rdfs:label ?ylbl .
+BIND(LCASE(STR(?ylbl)) AS ?ylblnolang)
+FILTER(?plblnolang = ?ylblnolang)
+}
+
+The query populates annotations by finding owl:Thing resources with labels that match owl:Class labels, ignoring case.
+It identifies resources ?post of type owl:Thing and ?y of type owl:Class.
+It binds the lowercase string values of their labels to ?plblnolang and ?ylblnolang.
+It filters pairs where the lowercase labels match.
+For each matching pair, it inserts a triple indicating that ?post is of type ?y.
+
+
