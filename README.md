@@ -10,8 +10,7 @@ OCD Ontology Version: This subfolder stores the .owl file of the OCD Ontology.
 Data_for_ontology_development: consists of formal resources used for developying OCD ontology.
 Ontology_Development: consists of the process of knowledge analysis, which includes identifying key concepts and their relationships, and creating RDF statements to formally represent these concepts. Additionally, it entails providing natural language definitions of OCD-related concepts and employing description logic to systematically outline the conceptualization. 
 OCD Ontology-Enrichment: Inside, there are tools for augmenting the ontology, like WordNet resources for semantic enhancement and SPARQL queries for integration. Another subfolder contains elements related to contextual similarity, including a Word2Vec model trained on OCD forum data and a CSV file listing terms semantically close to OCD-related concepts. 
-
-
+To describe the task of enrichment in details: 
 
 Evaluation Folder: Contains SPARQL queries, OOPs, survey of ontology evaluation, and subfolder for evaluation the ontology labelling by domain Experts. This 'Expert' subfolder includes a CSV file featuring posts annotated by the ontology and subsequently evaluated by domain experts for accuracy and relevance.  The survey folder consists of the survey, the results and visual analysis of the results. 
 
@@ -44,6 +43,9 @@ The script processes the OCD forum posts and sends them to the Annotator Plus se
 
 Processing Annotation Results:
 Convert the CSV file of the annotation results into .col and .ttl formats.
+To convert .col to .ttl, run the following command 
+tail -n+2 Final_Anno.col | nl | sed 's@^ *@{"post@; s@\t@":@; s@$@}@' | tr "'" '"' | jq -r '.[] |= map(gsub(" ";"_")) | (":"+(. | keys[]) + " a owl:Thing , :" + (.[][]) + " .")' >>Final_Anno11.ttl
+
 The .col file format is used to store the raw annotations.
 The .ttl file format (Turtle) is used to represent the annotations where each post is typed as a class.
 
