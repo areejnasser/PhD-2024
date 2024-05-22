@@ -7,10 +7,23 @@ The repository is organized into specific directories and subdirectories, each w
 
 Ontology Folder: This directory contains multiple subfolders:
 OCD Ontology Version: This subfolder stores the .owl file of the OCD Ontology.
+
 Data_for_ontology_development: consists of formal resources used for developying OCD ontology.
 Ontology_Development: consists of the process of knowledge analysis, which includes identifying key concepts and their relationships, and creating RDF statements to formally represent these concepts. Additionally, it entails providing natural language definitions of OCD-related concepts and employing description logic to systematically outline the conceptualization. 
+
 OCD Ontology-Enrichment: Inside, there are tools for augmenting the ontology, like WordNet resources for semantic enhancement and SPARQL queries for integration. Another subfolder contains elements related to contextual similarity, including a Word2Vec model trained on OCD forum data and a CSV file listing terms semantically close to OCD-related concepts. 
-To describe the task of enrichment in details: 
+To describe the task of enrichment in detail:
+
+Using WordNet:
+We downloaded three files from WordNet, namely, synset, synonyms, and hypernym, using the following links which provide WordNet in RDF format:
+WordNet Documentation: https://www.w3.org/TR/wordnet-rdf/
+WordNet Download: https://www.w3.org/2006/03/wn/wn20/download/
+We used a SPARQL query and the Lemon design pattern to integrate WordNet into the OCD ontology. The query is presented in WordNet folder.
+
+For Contextual Similarity:
+We trained a Word2Vec model using OCD forum data (presented in the 'Embedding-Similarity-Task' folder).
+We then asked for the top 10 similar terms to OCD-related terms.
+We used the FrAc design pattern and a SPARQL query to integrate these terms into the OCD ontology.
 
 Evaluation Folder: Contains SPARQL queries, OOPs, survey of ontology evaluation, and subfolder for evaluation the ontology labelling by domain Experts. This 'Expert' subfolder includes a CSV file featuring posts annotated by the ontology and subsequently evaluated by domain experts for accuracy and relevance.  The survey folder consists of the survey, the results and visual analysis of the results. 
 
@@ -72,127 +85,5 @@ To enrich the ontology, we employed Lemon and FrAC models, integrating WordNet a
 
 
 <img src="/Toward%20Obsessive-Compulsive%20Disorder%20Classification%20System/Ontology/Ontology-Enrichment/Contextual-similarity/ontolex-frac.png" width="500">
-
-
-The SPARQL qury used for integrating those resources into OCD ontology is:
-
-```sparql
-PREFIX : <http://www.semanticweb.org/ontoOCD#>
-PREFIX dc: <http://purl.org/dc/elements/1.1/>
-PREFIX decomp: <http://www.w3.org/ns/lemon/decomp#>
-PREFIX frac: <http://www.w3.org/ns/lemon/frac#>
-PREFIX lexinfo: <http://www.lexinfo.net/ontology/2.0/lexinfo#>
-PREFIX ontolex: <http://www.w3.org/ns/lemon/ontolex#>
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-PREFIX spif: <http://spinrdf.org/spif#>
-PREFIX wn20schema: <http://www.w3.org/2006/03/wn/wn20/schema/>
-PREFIX wn20instances: <http://www.w3.org/2006/03/wn/wn20/instances/>
-#SELECT *
-#FROM <ocd>
-
-#CONSTRUCT
-DELETE {
-?x  rdfs:label ?y
-}
-INSERT
-{
-?x
-    a owl:Class ;
-    a frac:Observable ;
-    rdfs:label ?xlbl ;
-    ?p ?o .
-
-
-## labels Word
-
-?xlblword
-    a ontolex:Word ;
-    a ontolex:LexicalEntry ;
-    a frac:Observable ;
-    ontolex:sense ?wn20 ;
-    ontolex:evokes ?wn20ss ;
-    frac:embedding ?embed .
-
-?xlblmulti
-    a ontolex:MultiWord ;
-    a ontolex:LexicalEntry ;
-    a frac:Observable ;
-    decomp:constituent ?wlbl .
-
-
-## components
-
-?wlbl
-    a decomp:Component ;
-    a frac:Observable ;
-    ontolex:sense ?wn20 ;
-    ontolex:evokes ?wn20ss ;
-    frac:embedding ?embed .
-
-
-## senses and evocations
-
-?wn20
-    a ontolex:LexicalSense ;
-    a frac:Observable ;
-    ontolex:isLexicalizedSenseOf ?wn20ss ;
-    ontolex:reference <http://www.w3.org/2006/03/wn/wn20/> . 
-
-?wn20ss
-    a ontolex:LexicalConcept ;
-    a frac:Observable ;
-    skos:definition ?def ;
-    lexinfo:hypernym ?wn20sshypo ;
-    ontolex:lexicalizedSense ?wn20 .
-
-
-## embeddings
-
-## similarities and attestations
-
-}
-WHERE {
-	?x a owl:Class .
-	OPTIONAL {
-		?x rdfs:label ?y
-	}
-	FILTER(STRSTARTS(STR(?x),STR(:)))
-
-	?x ?p ?o .
-	FILTER(?p != rdfs:label)
-
-	BIND(LCASE(STRAFTER(STR(COALESCE(?y,?x)),STR(:))) AS ?xbas)
-	BIND(IRI(CONCAT(STR(:),?xbas)) AS ?xlbl)
-
-	?word spif:split(?xbas '_') .
-	BIND(STRLANG(?word,'en-US') AS ?enword)
-
-	BIND(IF(CONTAINS(?xbas, '_'), IRI(CONCAT(STR(:),?word)), ?nil) AS ?wlbl)
-	BIND(IF(CONTAINS(?xbas, '_'), ?word, ?xbas) AS ?wbas)
-	BIND(IF(CONTAINS(?xbas, '_'), ?nil, ?xlbl) AS ?xlblword)
-	BIND(IF(CONTAINS(?xbas, '_'), ?xlbl, ?nil) AS ?xlblmulti)
-
-	BIND(IRI(CONCAT(STR(:),?wbas,'_embed')) AS ?embed)
-	BIND(IRI(CONCAT(STR(:),?wbas,'_attst')) AS ?attst)
-
-	OPTIONAL {
-		?wn20 rdfs:label ?enword .
-		?wn20ss wn20schema:containsWordSense ?wn20 ;
-			wn20schema:gloss ?def .
-		OPTIONAL {
-			?wn20ss wn20schema:hyponymOf ?wn20sshypo .
-		}
-	}
-
-	BIND(CONCAT(REPLACE(?xbas, '_', ' ')) AS ?quot)
-}) in read me file as code
-
-
-\end{lstlisting}
-
-
 
 
