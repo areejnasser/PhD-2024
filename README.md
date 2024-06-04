@@ -5,8 +5,19 @@ This repository is dedicated to developing an Obsessive-Compulsive Disorder (OCD
 
 The repository is organized into specific directories and subdirectories, each with a distinct purpose:
 
-Ontology Folder: This directory contains multiple subfolders:
-OCD Ontology Version: This subfolder stores the .owl file of the OCD Ontology.
+Ontology Folder: This directory comprises several subdirectories:
+
+Initial_Task_Data_Collection: This subfolder is intended for storing the initial datasets and related files collected for the project. It likely contains raw data and preliminary analyses pertinent to the early stages of the project.
+
+Second_Task_Conceptualisation: This subfolder is designated for files related to the conceptual phase. 
+
+OCD Ontology Versions: This subfolder contains the .owl files for the OCD Ontology across different versions:
+
+1. The initial version of the OCD ontology without importing or reusing other ontologies (ocd_version1.owl).
+2. The ontology enriched with WordNet (ocd_version2_enriched_WordNet.owl.zip).
+3. The ontology further enriched with WordEmbedding (ocd_version3_enriched_WordNet_Embedding.owl.zip).
+4. The latest version of the OCD ontology, which includes imports from reused ontologies.
+
 
 Data_for_ontology_development: consists of formal resources used for developying OCD ontology.
 Ontology_Development: consists of the process of knowledge analysis, which includes identifying key concepts and their relationships, and creating RDF statements to formally represent these concepts. Additionally, it entails providing natural language definitions of OCD-related concepts and employing description logic to systematically outline the conceptualization. 
