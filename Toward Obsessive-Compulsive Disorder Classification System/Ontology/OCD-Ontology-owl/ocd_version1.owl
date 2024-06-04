@@ -1,0 +1,1063 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/areejnasser/ocd/"
+     xml:base="http://www.semanticweb.org/areejnasser/ocd/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/areejnasser/ocd">
+        <rdfs:comment>2022-01-01</rdfs:comment>
+        <rdfs:comment>An Ontology for Obsessive-Compulsive Disorder</rdfs:comment>
+        <rdfs:comment>This ontology provides a structured representation of concepts related to Obsessive-Compulsive Disorder, informed by clinical definitions and patient experiences.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#accompaniedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/areejnasser/ocd#accompaniedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Obsession"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Compulsion"/>
+        <rdfs:comment>An object property where the domain is &quot;Obsession&quot; and the range is &quot;Compulsion.&quot; This property indicates that an obsession is accompanied by a compulsion.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#hasAssociatedEmotion -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/areejnasser/ocd#hasAssociatedEmotion">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#hasAssociation"/>
+        <rdfs:comment>`hasAssociatedEmotion&apos; is an object property that links instances of &quot;behavior,&quot; &quot;activity,&quot; &quot;intrusive thoughts,&quot; or &quot;intrusive urges&quot; with instances of &quot;emotions&quot; to represent the emotional reactions associated with these concepts. It is a sub-object property of hasAssociation.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#hasAssociatedImpairment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/areejnasser/ocd#hasAssociatedImpairment">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#hasAssociation"/>
+        <rdfs:comment>`hasAssociatedImpairment&apos; is an object property that links instances of &quot;behavior,&quot; &quot;activity,&quot; &quot;intrusive thoughts,&quot; or &quot;intrusive urges&quot; with instances of &quot;functional impairment&quot; to represent the emotional reactions associated with these concepts. It is a sub-object property of hasAssociation.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#hasAssociation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/areejnasser/ocd#hasAssociation">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Activity"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Behavior"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Intrusive_Thoughts"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Intrusive_Urge"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Functional_Impairment"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Negative_Emotion"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:comment>`hasAssociation&apos; is an object property that links instances of &quot;behavior,&quot; &quot;activity,&quot; &quot;intrusive thoughts,&quot; or &quot;intrusive urges&quot; with instances of &quot;emotions&quot; and &quot;impairment&quot; to represent the relationship between these concepts.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#hasComorbidity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/areejnasser/ocd#hasComorbidity">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Obsessive_Compulsive_Disorder"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Obsessive_Compulsive_Related_Disorder"/>
+        <rdfs:comment>hasComorbidity is an object property used to link instances of &quot;mental disorders.&quot; It represents the relationship between a specific mental disorder and the potential presence of other mental disorders occurring simultaneously in an individual.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#hasControlLevel -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/areejnasser/ocd#hasControlLevel">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#hasCriteria"/>
+        <rdfs:comment>The object property hasControlLevel indicates the degree of control an individual has over a behavior, activity, intrusive thought, or urge. It links the subject (behavior, activity, thought, or urge) to its corresponding control level assessment.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#hasCriteria -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/areejnasser/ocd#hasCriteria">
+        <rdfs:comment>`hasCriteria&apos;: This object property links a behavior, activity, intrusive thought, or urge to the assessment criteria.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#hasDistressLevel -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/areejnasser/ocd#hasDistressLevel">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#hasCriteria"/>
+        <rdfs:comment>The object property hasDistressLevel specifies the level of distress associated with a particular behavior, activity, intrusive thought, or urge. It connects the subject (behavior, activity, thought, or urge) to its corresponding distress level assessment.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#hasDurationLevel -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/areejnasser/ocd#hasDurationLevel">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#hasCriteria"/>
+        <rdfs:comment>The object property hasDurationLevel describes the duration level of a behavior, activity, intrusive thought, or urge. It links the subject (behavior, activity, thought, or urge) to its corresponding duration level assessment.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#hasInterferenceLevel -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/areejnasser/ocd#hasInterferenceLevel">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#hasCriteria"/>
+        <rdfs:comment>The object property hasInterferenceLevel identifies the extent to which a behavior, activity, intrusive thought, or urge interferes with an individual&apos;s daily functioning. It connects the subject (behavior, activity, thought, or urge) to its corresponding interference level assessment.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#hasRiskFactor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/areejnasser/ocd#hasRiskFactor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Obsessive_Compulsive_Disorder"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Risk_Factor"/>
+        <rdfs:comment>hasRiskFactor: This object property links a cognitive disorder with a risk factor that is known or hypothesized to contribute to the development, exacerbation, or occurrence of the cognitive disorder</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#hasSymptom -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/areejnasser/ocd#hasSymptom">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Obsessive_Compulsive_Disorder"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Symptoms"/>
+        <rdfs:comment>The object property hasSymptom links an instance of obsessive-compulsive and related disorders to its associated symptoms. This property is used to specify the symptoms that characterize a particular disorder within this category.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#hasTreatment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/areejnasser/ocd#hasTreatment">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Obsessive_Compulsive_Disorder"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Treatment"/>
+        <rdfs:comment>The object property hasTreatment specifies the relationship between Obsessive-Compulsive Disorder (OCD) and the treatments used to manage and treat the condition. This property is used to link instances of OCD with specific treatment methods, indicating the therapeutic approaches employed to address the disorder.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#hasTrigger -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/areejnasser/ocd#hasTrigger">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Activity"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Behavior"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Intrusive_Thoughts"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Intrusive_Urge"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Objects"/>
+        <rdfs:comment>The object property hasTrigger specifies the relationship between a behavior, activity, intrusive thought, or urge and the object, room/location, or event that triggers it. This property is used to indicate what causes or initiates the behavior, activity, intrusive thought, or urge.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Activity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Activity"/>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Aggressive_Intrusive_Image -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Aggressive_Intrusive_Image">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Intrusive_Image"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Aggressive_Intrusive_Thought -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Aggressive_Intrusive_Thought">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Intrusive_Thoughts"/>
+        <rdfs:comment>The concept of aggressiveness can be elucidated through the lens of aggressive obsessions in Y-BOCS, which may include fears related to harming oneself or others, experiencing violent or horrific mental images, the dread of uttering obscenities or insults, and the apprehension of acting on unwanted impulses (e.g., harming a friend) or stealing things. It can also encompass the fear of causing harm to others due to perceived carelessness (e.g., causing a hit-and-run motor vehicle accident) or the apprehension of being responsible for undesirable outcomes.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Aggressive_Intrusive_Urge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Aggressive_Intrusive_Urge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Intrusive_Urge"/>
+        <rdfs:comment>An intrusive aggressive urge refers to a recurring, distressing aggressive urge/impulse that is intrusive and unwanted.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Aggressive_Obsession -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Aggressive_Obsession">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Obsession"/>
+        <rdfs:comment>CY-BOCS: 
+When driving, you are afraid you might hit a pedestrian because of not paying enough attention. You are afraid a customer might get injured because you gave them the wrong materials or information. 
+you are afraid you might impulsively stab a loved one or drive your car into oncoming traffic for no reason. 
+you are afraid that something terrible like a fire, natural disaster, or burglary was or will be your fault 
+you are afraid you might shout blasphemies in church, yell “fire!” in a movie theater, or write obscenities in a business email for no good reason 
+disturbing images of car accidents disfigured people port corpses enter your thoughts for no apparent reason 
+Avoiding handling sharp or dangerous objects, or operating vehicles or machinery, out of concern that you might harm others 
+intrusive and disturbing images of car crashes or disfigured people 
+shouting blasphemies in church, yelling fire in the movie theatre, writing obscenities in a school paper 
+Fear of being responsible for terrible events fire, burglary, flooding house, parents divorcing, caregiver dying 
+Physically harming loved ones, stabbing or poisoning parents pushing sibling in front of a car. Irrational fear that if do not pick up toys that caregiver will trip on them and get seriously injured.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Assessment_Criterion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Assessment_Criterion">
+        <rdfs:comment>The assessment of obsession or compulsion considers four aspects, the level of control, level of interference, level of resistance, time taken and level of distress.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Behavior -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Behavior"/>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Body_Dysmorphic_Disorder -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Body_Dysmorphic_Disorder">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Obsessive_Compulsive_Related_Disorder"/>
+        <rdfs:comment>Body Dysmorphic Disorder (BDD) is classified under the category of Obsessive-Compulsive and Related Disorders. Body Dysmorphic Disorder is characterized by a preoccupation with perceived defects or flaws in physical appearance that are not observable or appear only slight to others.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Cognitive_Behavior_Therapy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Cognitive_Behavior_Therapy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Psychological_Treatment"/>
+        <rdfs:comment>CBT is a type of psychological treatment that aims to improve mental health by changing patterns of thinking or behavior that are causing people&apos;s problems, and thus changing the way they feel.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Compulsion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Compulsion">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Compulsive_Behavior"/>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Mental_Compulsive_Behavior"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Physical_Compulsive_Behavior"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Compulsive_Behavior -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Compulsive_Behavior">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Behavior"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Mental_Act"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/areejnasser/ocd#hasAssociatedEmotion"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Negative_Emotion"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/areejnasser/ocd#hasAssociatedImpairment"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Functional_Impairment"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/areejnasser/ocd#hasDurationLevel"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Severity_Duration_Level"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Contamination_Intrusive_Image -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Contamination_Intrusive_Image">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Intrusive_Image"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Contamination_Intrusive_Thought -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Contamination_Intrusive_Thought">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Intrusive_Thoughts"/>
+        <rdfs:comment>The concept of contamination can be understood through the perspective of contamination obsessions in Y-BOCS, which encompass concerns and disgust related to various elements, including bodily waste or secretions (e.g., urine, feces, saliva), dirt, germs, environmental contaminants (e.g., asbestos, radiation, toxic waste), household items (e.g., cleansers, solvents), and animals (e.g., insects). Individuals may also experience distress related to sticky substances or residues, as well as fears of falling ill due to contamination or concerns about spreading contaminants to others. Importantly, these concerns may manifest without a significant focus on the consequences of contamination beyond the emotional distress it may evoke.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Contamination_Intrusive_Urge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Contamination_Intrusive_Urge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Intrusive_Urge"/>
+        <rdfs:comment>A contamination intrusive urge refers to a recurring, distressing  urge/impulse that is intrusive and unwanted.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Contamination_Obsession -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Contamination_Obsession">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Obsession"/>
+        <rdfs:comment>CY-BOCS: Excessive concern with contaminants or chemicals. Examples:household cleansers, gasoline, radiation, pesticides and chemicals.Concern will harm others by spreading germs or contaminants. Examples: transfer germs from one object to another.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Doubt_Intrusive_Image -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Doubt_Intrusive_Image">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Intrusive_Image"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Doubt_Intrusive_Thought -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Doubt_Intrusive_Thought">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Intrusive_Thoughts"/>
+        <rdfs:comment>Doubt obsessions can be characterized as persistent and distressing uncertainties or hesitations regarding various aspects of life. These may include doubts about personal actions, decisions, beliefs, or morality.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Doubt_Intrusive_Urge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Doubt_Intrusive_Urge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Intrusive_Urge"/>
+        <rdfs:comment>An intrusive doubt urge refers to a recurring, distressing doubt urge/impulse that is intrusive and unwanted.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Doubt_Obsession -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Doubt_Obsession">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Obsession"/>
+        <rdfs:comment>OCI: Even when I do something very carefully I feel that it is not quite right. After I have done things, I have persistent doubts about whether I really did them. After doing something carefully, I still have the impression I haven’t finished it.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Enviromental_Factor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Enviromental_Factor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Risk_Factor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Functional_Impairment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Functional_Impairment">
+        <rdfs:comment>A disturbance of executive functioning, which is broadly defined as the set of abilities that allow for the planning, executing, monitoring, and self-correcting of goal-directed behavior while inhibiting task-irrelevant behavior. At least some degree of executive skill is needed to complete most cognitive tasks, and deficits in executive abilities are central to many clinical conditions, including fronto-temporal dementia. [PMID: 28631987]</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Gender_Factor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Gender_Factor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Risk_Factor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Genetic_Factor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Genetic_Factor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Risk_Factor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Hoarding_Disorder -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Hoarding_Disorder">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Obsessive_Compulsive_Related_Disorder"/>
+        <rdfs:comment>Hoarding Disorder is classified under the category of Obsessive-Compulsive and Related Disorders. Hoarding Disorder is characterized by the persistent difficulty discarding or parting with possessions, regardless of their actual value</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Hoarding_Intrusive_Image -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Hoarding_Intrusive_Image">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Intrusive_Image"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Hoarding_Intrusive_Thought -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Hoarding_Intrusive_Thought">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Intrusive_Thoughts"/>
+        <rdfs:comment>The concept of hoarding can be illuminated by examining hoarding obsessions as described in Y-BOCS. These hoarding thought may encompass the differentiation between one&apos;s hobbies and concerns related to objects with monetary or sentimental value.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Hoarding_Intrusive_Urge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Hoarding_Intrusive_Urge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Intrusive_Urge"/>
+        <rdfs:comment>An intrusive hoarding urge refers to a recurring, distressing hoarding urge/impulse that is intrusive and unwanted.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Hoarding_Obsession -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Hoarding_Obsession">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Obsession"/>
+        <rdfs:comment>Hoarding obsession is distinguish from hobbies and concern with objects of monetary or sentimental value [Y-BOCS]</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Intrusive_Image -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Intrusive_Image">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Mental_Image"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/areejnasser/ocd#hasAssociatedEmotion"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Negative_Emotion"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/areejnasser/ocd#hasAssociatedImpairment"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Functional_Impairment"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/areejnasser/ocd#hasDurationLevel"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Severity_Duration_Level"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Thought"/>
+        <rdfs:comment>In Obsessive-Compulsive Disorder (OCD), an &quot;intrusive mental image&quot; typically refers to a recurring, distressing, and often vivid mental picture or visualization that is intrusive and unwanted.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Intrusive_Thoughts -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Intrusive_Thoughts">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Thought"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/areejnasser/ocd#hasAssociatedEmotion"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Negative_Emotion"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/areejnasser/ocd#hasAssociatedImpairment"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Functional_Impairment"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/areejnasser/ocd#hasDurationLevel"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Severity_Duration_Level"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Thought"/>
+        <rdfs:comment>According to cognitive–behavioural OCD theories (e.g. Clark, 2004; Salkovskis, 1985), intrusions with different contents (aggression, sexuality/immorality, doubts, necessity to check, and contamination concerns, among others) develop into obsessions when these intrusions are appraised as highly disturbing and relevant, provoke negative emotional reactions, and lead to the individual&apos;s need to neutralize or suppress them (e.g. compulsions and other control strategies). However, these control and/or neutralizing strategies can be counterproductive. As a result, obsessions will continue to affect patients&apos; daily activity and quality of life.</rdfs:comment>
+        <rdfs:comment>The concept of &quot;intrusiveness&quot; is characterized by its association with negative emotions, time-consuming tendencies, and functional impairment (DSM-5).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Intrusive_Urge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Intrusive_Urge">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Urge"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/areejnasser/ocd#hasAssociatedEmotion"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Negative_Emotion"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/areejnasser/ocd#hasAssociatedImpairment"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Functional_Impairment"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/areejnasser/ocd#hasDurationLevel"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Severity_Duration_Level"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Urge"/>
+        <rdfs:comment>In Obsessive-Compulsive Disorder (OCD), an intrusive urge refers to a recurring, distressing urge/impulse that is intrusive and unwanted (DSM-5).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Medications -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Medications">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Treatment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Mental_Act -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Mental_Act"/>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Mental_Compulsive_Behavior -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Mental_Compulsive_Behavior">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Mental_Act"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/areejnasser/ocd#hasAssociatedEmotion"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Negative_Emotion"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/areejnasser/ocd#hasAssociatedImpairment"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Functional_Impairment"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/areejnasser/ocd#hasDurationLevel"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Severity_Duration_Level"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Compulsive_Behavior"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Mental_Counting -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Mental_Counting">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Mental_Act"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Mental_Image -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Mental_Image">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Thought"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Mental_Parying -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Mental_Parying">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Mental_Act"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Negative_Emotion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Negative_Emotion"/>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Normal_Routin_Impairment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Normal_Routin_Impairment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Functional_Impairment"/>
+        <rdfs:comment>refers to difficulties in performing daily activities and maintaining regular routines, which can disrupt an individual&apos;s ability to manage personal care, household responsibilities, social engagements, and other everyday tasks.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Objects -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Objects"/>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Obsession -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Obsession">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Intrusive_Image"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Intrusive_Thoughts"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Intrusive_Urge"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>Obsessions (recurrent and persistent thoughts, impulses, or images experienced as intrusive and inappropriate and causing marked anxiety or distress) generally accompanied by compulsions (repetitive behaviours or mental acts done in order to prevent or reduce anxiety or distress caused by obsessions) (American Psychiatric Association [APA], 1994)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Obsessive_Compulsive_Disorder -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Obsessive_Compulsive_Disorder">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Compulsion"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Obsession"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Obsessive_Compulsive_Related_Disorder"/>
+        <rdfs:comment>Obsessive-Compulsive Disorder (OCD) is a mental disorder characterized by the presence of obsessions and/or compulsions.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Obsessive_Compulsive_Related_Disorder -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Obsessive_Compulsive_Related_Disorder">
+        <rdfs:comment>Obsessive-Compulsive and Related Disorders (OCRDs) is a category of mental disorders that share similarities with OCD in terms of the presence of obsessions and/or compulsions. These disorders involve recurrent distressing thoughts, urges, or behaviors. OCRDs encompass various conditions related to obsessive-compulsive features, including Body Dysmorphic Disorder, Hoarding Disorder, Trichotillomania (Hair-Pulling Disorder), and Excoriation (Skin-Picking) Disorder, among others.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Occupational_Impairment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Occupational_Impairment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Functional_Impairment"/>
+        <rdfs:comment>Refers to difficulties in performing and sustaining job-related tasks and responsibilities.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Physical_Compulsive_Behavior -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Physical_Compulsive_Behavior">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Activity"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/areejnasser/ocd#hasAssociatedEmotion"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Negative_Emotion"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/areejnasser/ocd#hasAssociatedImpairment"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Functional_Impairment"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/areejnasser/ocd#hasDurationLevel"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Severity_Duration_Level"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Compulsive_Behavior"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Psychological_Treatment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Psychological_Treatment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Treatment"/>
+        <rdfs:comment>Psychological treatment, also known as psychotherapy or talk therapy, refers to a range of therapeutic interventions designed to help individuals manage and overcome mental health issues, emotional difficulties, and behavioral problems.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Relationship_Impairment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Relationship_Impairment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Functional_Impairment"/>
+        <rdfs:comment>Relationship impairment refers to difficulties in forming, maintaining, and navigating personal relationships, including those with family, friends, and romantic partners.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Religious_Intrusive_Image -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Religious_Intrusive_Image">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Intrusive_Image"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Religious_Intrusive_Thought -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Religious_Intrusive_Thought">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Intrusive_Thoughts"/>
+        <rdfs:comment>The understanding of religion can be framed by examining it through the perspective of religious obsession outlined in Y-BOCS. These religious obsession often entail fixations on matters related to sacrilege and blasphemy, an exaggerated preoccupation with moral questions, and contemplation of other spiritual concerns. These may manifest intrusively when accompanied by negative emotions, time-consuming behaviors, and functional impairments.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Religious_Intrusive_Urge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Religious_Intrusive_Urge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Intrusive_Urge"/>
+        <rdfs:comment>An intrusive religious urge refers to a recurring, distressing religious urge/impulse that is intrusive and unwanted.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Religious_Obsession -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Religious_Obsession">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Obsession"/>
+        <rdfs:comment>Concerned with sacrilege and blasphemy or concern with right/wrong, morality and Other [Y-BOCS].</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Risk_Factor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Risk_Factor">
+        <rdfs:comment>Any aspect of an individual&apos;s life, behavior, an environmental exposure, or an inborn or inherited characteristic that increases the likelihood of a disease, condition or injury.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Severity_Control_Level -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Severity_Control_Level">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Assessment_Criterion"/>
+        <rdfs:comment>Lack of Control: The individual recognizes that the obsessions and compulsions are excessive or unreasonable but has difficulty controlling or resisting them. 
+
+There are (4) levels, mild, moderate, severe and extreme (Y-BOCS).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Severity_Distress_Level -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Severity_Distress_Level">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Assessment_Criterion"/>
+        <rdfs:comment>Distress: The obsessions and compulsions cause marked distress, anxiety, or discomfort; and there are (4) level of distress, mild, moderate, severe and extreme.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Severity_Duration_Level -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Severity_Duration_Level">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Assessment_Criterion"/>
+        <rdfs:comment>Duration: The symptoms of OCD persist for an extended period, typically more than one hour per day for at least six months.
+
+There are (4) levels, mild, moderate, severe and extreme (Y-BOCS).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Severity_Interference_Level -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Severity_Interference_Level">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Assessment_Criterion"/>
+        <rdfs:comment>Interference with Life: The obsessions and compulsions significantly interfere with the individual&apos;s daily life, relationships, or occupational or academic functioning.
+
+There are (4) levels, mild, moderate, severe and extreme (Y-BOCS).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Severity_Resistance_Level -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Severity_Resistance_Level">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Assessment_Criterion"/>
+        <rdfs:comment>&quot;resistance level&quot; refers to the individual&apos;s ability to resist or control their compulsive behaviors (compulsions) once the obsessive thoughts (obsessions) have been triggered. 
+There are (4) levels, mild, moderate, severe and extreme (Y-BOCS).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Sextual_Intrusive_Image -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Sextual_Intrusive_Image">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Intrusive_Image"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Sextual_Intrusive_Thought -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Sextual_Intrusive_Thought">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Intrusive_Thoughts"/>
+        <rdfs:comment>The understanding of sexuality can be gleaned by examining it through the lens of sexual obsession described in Y-BOCS. These sexual obsession may encompass forbidden or perverse sexual thoughts, explicit images, or impulsive desires, some of which might involve highly sensitive content related to children or incest. Additionally, this obsession could extend to concerns surrounding homosexuality and issues related to sexual behavior towards others, particularly in an aggressive context. These can become intrusive when accompanied by negative emotions, time-consuming behaviors, and functional impairments.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Sextual_Intrusive_Urge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Sextual_Intrusive_Urge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Intrusive_Urge"/>
+        <rdfs:comment>An intrusive sexual urge refers to a recurring, distressing sexual urge/impulse that is intrusive and unwanted.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Sexual_Obsession -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Sexual_Obsession">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Obsession"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Skin_Pickling_Disorder -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Skin_Pickling_Disorder">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Obsessive_Compulsive_Related_Disorder"/>
+        <rdfs:comment>Excoriation Disorder is categorized as one of the Obsessive-Compulsive and Related Disorders (OCRDs) in the DSM-5. It is characterized by recurrent skin picking, often leading to skin lesions and clinically significant distress or impairment.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Social_Factor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Social_Factor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Risk_Factor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Social_Impairment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Social_Impairment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Functional_Impairment"/>
+        <rdfs:comment>Refers to difficulties in social interactions and relationships, which can affect a person&apos;s ability to function effectively in social contexts (APA).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Somatic_Intrusive_Image -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Somatic_Intrusive_Image">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Intrusive_Image"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Somatic_Intrusive_Thought -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Somatic_Intrusive_Thought">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Intrusive_Thoughts"/>
+        <rdfs:comment>The concept of somatic experiences can be illuminated by considering it through the lens of somatic obsession delineated in Y-BOCS. These somatic obsession may revolve around excessive concerns with illness or disease, leading to heightened apprehension regarding one&apos;s health. They can also encompass preoccupations with specific body parts or aspects of appearance, a condition known as dysmorphophobia. Additionally, these contents may manifest in various other forms, creating intrusive experiences when linked to negative emotions, time-consuming rituals, and functional impairments.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Somatic_Intrusive_Urge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Somatic_Intrusive_Urge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Intrusive_Urge"/>
+        <rdfs:comment>An intrusive somatic urge refers to a recurring, distressing somatic urge/impulse that is intrusive and unwanted.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Somatic_Obsession -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Somatic_Obsession">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Obsession"/>
+        <rdfs:comment>Y-BOCS: Excessive concern with illness or disease. Excessive concern with body part or aspect of appearance (e.g., dysmorphophobia).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Suicide_Factor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Suicide_Factor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Risk_Factor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Symmetry_Intrusive_Image -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Symmetry_Intrusive_Image">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Intrusive_Image"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Symmetry_Intrusive_Thought -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Symmetry_Intrusive_Thought">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Intrusive_Thoughts"/>
+        <rdfs:comment>The concept of symmetry-related obsessions can be elucidated by viewing it through the lens of Y-BOCS. These obsessions often entail an intense preoccupation with symmetry and order in one&apos;s surroundings. Individuals with symmetry-related obsessions may engage in rituals and behaviors aimed at creating a sense of balance, and these behaviors may sometimes involve magical thinking. For instance, someone with symmetry-related thoughts might believe that unless objects are arranged in a particular way, harm may come to others. This is an example of symmetry-related obsessions accompanied by magical thinking. On the other hand, some individuals experience symmetry-related obsessions without the presence of magical thinking. These thoughts can be associated with distress, time-consuming rituals, and functional impairment, hence, they categorize as intrusive.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Symmetry_Intrusive_Urge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Symmetry_Intrusive_Urge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Intrusive_Urge"/>
+        <rdfs:comment>An intrusive symmetry urge refers to a recurring, distressing symmetry urge/impulse that is intrusive and unwanted.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Symmetry_Obsession -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Symmetry_Obsession">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Obsession"/>
+        <rdfs:comment>Symmetry obsessions are characterized by the need for things to be perfect, exact or “just right,” symmetrical, or correctly aligned, and related compulsions include ordering and arranging, evening up or aligning things, and touching or tapping. This definition is taken from ``Lochner, Christine, et al. &quot;Symmetry symptoms in obsessive-compulsive disorder: clinical and genetic correlates.&quot; Brazilian Journal of Psychiatry 38 (2015): 17-23.&apos;&apos;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Symptoms -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Symptoms"/>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Temperamental_Factor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Temperamental_Factor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Risk_Factor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Thought -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Thought"/>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Treatment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Treatment"/>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Trichotillomania -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Trichotillomania">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/areejnasser/ocd#Obsessive_Compulsive_Related_Disorder"/>
+        <rdfs:comment>Hair-Pulling Disorder</rdfs:comment>
+        <rdfs:comment>Trichotillomania, or Hair-Pulling Disorder, is categorized as one of the Obsessive-Compulsive and Related Disorders (OCRDs) in the DSM-5. It is characterized by recurrent hair-pulling resulting in hair loss.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Trigger -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Trigger">
+        <rdfs:comment>In the context of Obsessive-Compulsive Disorder (OCD), a &quot;trigger&quot; refers to any stimulus—such as a thought, object, situation, or environment—that initiates or exacerbates the compulsive thoughts and behaviors characteristic of OCD.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/areejnasser/ocd#Urge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/areejnasser/ocd#Urge">
+        <rdfs:comment>The terms urge and desire are frequently encountered as both a verb (as in to “urge someone on”—i.e., to motivate, impel, or stimulate a person toward an action) and as a noun (as in “he felt an urge to shout”—i.e., a force, drive, or impulse that impels toward a goal) [On the functional anatomy of the urge-for-action by Stephen].</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Aggressive_Intrusive_Urge"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Contamination_Intrusive_Urge"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Doubt_Intrusive_Urge"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Hoarding_Intrusive_Urge"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Religious_Intrusive_Urge"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Sextual_Intrusive_Urge"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Somatic_Intrusive_Urge"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Symmetry_Intrusive_Urge"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Aggressive_Obsession"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Contamination_Obsession"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Doubt_Obsession"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Hoarding_Obsession"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Religious_Obsession"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Sexual_Obsession"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Somatic_Obsession"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/areejnasser/ocd#Symmetry_Obsession"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
