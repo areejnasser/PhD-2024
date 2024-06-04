@@ -19,8 +19,6 @@ OCD Ontology Versions: This subfolder contains the .owl files for the OCD Ontolo
 4. The latest version of the OCD ontology, which includes imports from reused ontologies.
 
 
-Data_for_ontology_development: consists of formal resources used for developying OCD ontology.
-Ontology_Development: consists of the process of knowledge analysis, which includes identifying key concepts and their relationships, and creating RDF statements to formally represent these concepts. Additionally, it entails providing natural language definitions of OCD-related concepts and employing description logic to systematically outline the conceptualization. 
 
 OCD Ontology-Enrichment: Inside, there are tools for augmenting the ontology, like WordNet resources for semantic enhancement and SPARQL queries for integration. Another subfolder contains elements related to contextual similarity, including a Word2Vec model trained on OCD forum data and a CSV file listing terms semantically close to OCD-related concepts. 
 To describe the task of enrichment in detail:
@@ -38,7 +36,7 @@ We used the FrAc design pattern and a SPARQL query to integrate these terms into
 
 Evaluation Folder: Contains SPARQL queries, OOPs, survey of ontology evaluation, and subfolder for evaluation the ontology labelling by domain Experts. This 'Expert' subfolder includes a CSV file featuring posts annotated by the ontology and subsequently evaluated by domain experts for accuracy and relevance.  The survey folder consists of the survey, the results and visual analysis of the results. 
 
-The repository's "Annotation" directory is a compilation of resources and scripts used for the data annotation process, with the following contents:
+The repository's "Ontology_Annotation_&_Populations" directory is a compilation of resources and scripts used for the data annotation process, with the following contents:
 
 Annotation 1 and Annotation 2 Subfolders: These contain the results of the annotation efforts.
 Annotation 1: Includes a collection of files detailing the annotations of an OCD forum using the base OCD ontology.
